@@ -1,3 +1,5 @@
+import type { CommandInteraction, Message } from 'discord.js';
+
 const userMentionPattern = /<@!?(\d+)>/gm;
 const roleMentionPattern = /<@&(\d+)>/gm;
 const channelMentionPattern = /<#(\d+)>/gm;
@@ -66,4 +68,15 @@ export function getChannelIdFromMention(string: string): string | null {
  */
 export function getChannelIdsFromMention(string: string): string | string[] | null {
 	return _extractIds(string.matchAll(channelMentionPattern));
+};
+
+/**
+ * Gets the URL to a message
+ * @param message Message
+ * @returns The URL to the message
+ */
+export function getMessageURL(message: Message): string {
+	const { id, guildId, channelId} = message;
+
+	return `https://discord.com/channels/${guildId}/${channelId}/${id}`;
 };
