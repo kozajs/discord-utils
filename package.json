@@ -5,7 +5,7 @@
 	"homepage": "https://github.com/kozajs/discord-utils",
 	"respository": {
 		"type": "git",
-		"url": "https://github.com/kozajs/discord-utils.git"
+		"url": "git+https://github.com/kozajs/discord-utils.git"
 	},
 	"bugs": {
 		"url": "https://github.com/kozajs/discord-utils/issues"
